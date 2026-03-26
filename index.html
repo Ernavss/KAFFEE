@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Bar – Kaffe FIKA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Kaffe <span> FIKA</span></a>
+    <ul class="nav-links">
+      <li><a href="#">Mobiliario</a></li>
+      <li><a href="#">Alimentos</a></li>
+      <li><a href="#">Loza</a></li>
+      <li><a href="#">Decoración</a></li>
+      <li><a href="#">Paquetes</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-cart" onclick="window.location.href='cart.html'">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        Ver carrito
+      </button>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="#">Inicio</a><span>/</span>
+    <a href="#">Alimentos & Bebidas</a><span>/</span>
+    Coffee Bar
+  </div>
+
+  <div class="product">
+    <div class="gallery fade-up">
+      <div class="gallery-main">
+        <img id="main-img"
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80"
+          alt="Coffee Bar" />
+        <div class="badge">Disponible</div>
+      </div>
+      <div class="gallery-thumbs">
+        <img class="active"
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80"
+          alt="Coffee Bar 1"
+          onclick="changeImg(this,'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80')" />
+        <img
+          src="Designer.jpeg"
+          alt="Coffee Bar 2"
+          onclick="changeImg(this,'Designer.jpeg')" />
+        <img
+          src="Designer (1).png"
+          alt="Coffee Bar 3"
+          onclick="changeImg(this,'Designer (1).png')" />
+      </div>
+    </div>
+
+    <div class="product-info fade-up" style="transition-delay:.15s">
+
+      <div class="label-tag">Servicio de Eventos</div>
+
+      <h1 class="product-title">Coffee <em>Bar</em></h1>
+
+      <div class="product-price">
+        <span class="price-current" id="displayed-price">$130.00 MXN</span>
+        <span class="price-unit">por persona</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="product-desc">
+        Renta de barra de café para eventos. Nuestros paquetes incluyen 2–3 horas de servicio
+        con personal atendiendo durante todo el evento. Creamos una experiencia de café de
+        especialidad inolvidable para tus invitados.
+      </p>
+      <p class="includes-title">¿Qué incluye?</p>
+      <div class="includes-grid">
+        <div class="include-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Mobiliario
+        </div>
+        <div class="include-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Personal de servicio
+        </div>
+        <div class="include-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          2 Horas de servicio
+        </div>
+        <div class="include-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Cristalería
+        </div>
+        <div class="include-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Menú impreso
+        </div>
+        <div class="include-item">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Decoración floral sencilla
+        </div>
+      </div>
+
+      <p class="includes-title">Menú de bebidas</p>
+      <div class="menu-chips">
+        <div class="chip">☕ Latte</div>
+        <div class="chip">✨ Latte Vainilla</div>
+        <div class="chip">☕ Cappuccino</div>
+        <div class="chip">🧊 Iced Mocha</div>
+        <div class="chip">☕ Americano</div>
+      </div>
+
+      <div class="notes-box">
+        <strong>3–4 bebidas por persona.</strong><br/>
+        Servicio después de las 9pm: <strong>$300 extra.</strong><br/>
+        Precio no incluye flete; varía según complejidad del montaje y distancia del evento.
+      </div>
+
+      <p class="quantity-label">Selecciona tu paquete</p>
+      <div class="price-tiers">
+        <div class="tier selected" onclick="selectTier(this, '$130.00 MXN', '80–150 personas')">
+          <div class="tier-label">80–150 personas</div>
+          <div class="tier-price">$130</div>
+        </div>
+        <div class="tier" onclick="selectTier(this, '$90.00 MXN', '+150 personas')">
+          <div class="tier-label">+150 personas</div>
+          <div class="tier-price">$100</div>
+        </div>
+      </div>
+      <p class="quantity-label">Número de personas</p>
+      <div class="quantity-row">
+        <button class="qty-btn" onclick="changeQty(-10)">−</button>
+        <div id="qty-display">150</div>
+        <button class="qty-btn" onclick="changeQty(10)">+</button>
+        <span class="qty-price" id="qty-price-note">≈ 450–600 bebidas en total</span>
+      </div>
+      <button class="btn-add" onclick="addToCart()">
+        Agregar al carrito
+      </button>
+      <a href="https://wa.me/525548721970" target="_blank" class="btn-whatsapp">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+        Cotizar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <h2>¿Tienes dudas sobre tu evento?</h2>
+    <p>Cotiza con nosotros por WhatsApp o a través de nuestras redes sociales.</p>
+    <a href="https://wa.me/525548721970" class="btn-wa" target="_blank">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </svg>
+      Contactar por WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    Derechos de autor © 2026, Kaffe FIKA &nbsp;|&nbsp; Todos los derechos reservados
+  </footer>
+
+  <div id="toast"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
